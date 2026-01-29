@@ -50,7 +50,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-  <div class="navbar-menu">
+  <!-- <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
       <a class="navbar-item" href="https://keunhong.com">
       <span class="icon">
@@ -79,7 +79,7 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 </nav>
 
 
@@ -88,27 +88,13 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">Visually Grounded Humanoid Fall Safety via Egocentric Goal Inference</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="https://keunhong.com">Name Here</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+              <a href="https://utkarshsinha.com">Name here</a><sup>2</sup>,</span>
+
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -175,7 +161,19 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- Paper video. -->
+<div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+    <!-- <h2 class="title is-3">Video</h2> -->
+    <div class="publication-video">
+        <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    </div>
+</div>
+<!--/ Paper video. -->
+
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -183,16 +181,14 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        We propose a vision-enabled learning method for jointly solving humanoid stand-up and fall recovery tasks. Our learned policy can be directly deployed on Unitree G1 humanoid robots.
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -247,7 +243,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -257,51 +253,114 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
+            <p>
+                Reliable fall-recovery is essential for enabling humanoid robots to operate in real, cluttered environments. Unlike
+                quadrupeds and wheeled systems, humanoids experience high-energy impacts, complex whole-body contact, and significant
+                viewpoint changes during a fall, and failure to stand up leavesthe robot effectively inoperable. 
+
+            </p>
+
+            <p>
+                Existing approaches either treat
+                impact mitigation and standing as separate modules or assume
+                flat terrain and blind proprioceptive sensing, limiting robustness
+                and safety in unstructured settings. 
+            </p>  
+
+            <p>
+                We introduce a unified framework for fall mitigation and stand-up recovery with perceptual awareness using egocentric vision. Our method employs
+                a privileged teacher that learns recovery strategies conditioned
+                on sparse demonstration priors and local terrain geometry, and
+                a deployable student that infers the teacher’s goal representation
+                from egocentric depth and short-term proprioception via distillation. This enables the student to reason about both how to fall
+                and how to get up while avoiding unsafe contacts. Simulation experiments demonstrate higher success and safer recovery across
+                diverse non-flat terrains and disturbance conditions compared to blind baselines. The learned policy transfers zero-shot to a
+                real Unitree G1 humanoid, recovering from diverse stand-up scenarios and falls in unstructured environments without any
+                real-world fine-tuning
+            </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+
+
+
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h2 class="title is-2">Standing Up From Face-up Poses</h2>
+                <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Visual Effects</h2>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/dollyzoom-stacked.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-4">Name here</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" controls playsinline height="100%">
+              <source src="./static/videos/matting.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
+
+        <div class="content has-text-justified">
+            <p>
+                Reliable fall-recovery is essential for enabling humanoid robots to operate in real, cluttered environments. Unlike
+                quadrupeds and wheeled systems, humanoids experience high-energy impacts, complex whole-body contact, and significant
+                viewpoint changes during a fall, and failure to stand up leavesthe robot effectively inoperable. 
+
+            </p>
+
+            <p>
+                Existing approaches either treat
+                impact mitigation and standing as separate modules or assume
+                flat terrain and blind proprioceptive sensing, limiting robustness
+                and safety in unstructured settings. 
+            </p>  
+
+            <p>
+                We introduce a unified framework for fall mitigation and stand-up recovery with perceptual awareness using egocentric vision. Our method employs
+                a privileged teacher that learns recovery strategies conditioned
+                on sparse demonstration priors and local terrain geometry, and
+                a deployable student that infers the teacher’s goal representation
+                from egocentric depth and short-term proprioception via distillation. This enables the student to reason about both how to fall
+                and how to get up while avoiding unsafe contacts. Simulation experiments demonstrate higher success and safer recovery across
+                diverse non-flat terrains and disturbance conditions compared to blind baselines. The learned policy transfers zero-shot to a
+                real Unitree G1 humanoid, recovering from diverse stand-up scenarios and falls in unstructured environments without any
+                real-world fine-tuning
+            </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
   </div>
 </section>
+
 
 
 <section class="section">
@@ -444,11 +503,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{test,
+  author    = {TODO< TODO},
+  title     = {TODO},
+  journal   = {FILL IN },
+  year      = {FILL IN },
 }</code></pre>
   </div>
 </section>
@@ -469,16 +528,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Page template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
           </p>
         </div>
       </div>
