@@ -22,7 +22,7 @@
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
@@ -167,7 +167,7 @@
     <!-- <h2 class="title is-3">Video</h2> -->
     <div class="publication-video">
         <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                frameborder="0" allow="autoplay; encrypted-media"></iframe>
     </div>
     </div>
 </div>
@@ -290,34 +290,28 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-
-
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-2">Standing Up From Face-up Poses</h2>
+        <h2 class="title is-2">Vision-enabled Fall Recovery</h2>
                 <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-4">Visual Effects</h2>
+          <h2 class="title is-4">Face down</h2>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+            <source src="./static/videos/stand_up/face_down_on_ground.mp4"
                     type="video/mp4">
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-4">Name here</h2>
+        <h2 class="title is-4">Face up</h2>
         <div class="columns is-centered">
           <div class="column content">
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/stand_up/face_up_on_ground.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -325,34 +319,47 @@
         </div>
       </div>
     </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
 
-        <div class="content has-text-justified">
-            <p>
-                Reliable fall-recovery is essential for enabling humanoid robots to operate in real, cluttered environments. Unlike
-                quadrupeds and wheeled systems, humanoids experience high-energy impacts, complex whole-body contact, and significant
-                viewpoint changes during a fall, and failure to stand up leavesthe robot effectively inoperable. 
 
-            </p>
+  </div>
+</section>
 
-            <p>
-                Existing approaches either treat
-                impact mitigation and standing as separate modules or assume
-                flat terrain and blind proprioceptive sensing, limiting robustness
-                and safety in unstructured settings. 
-            </p>  
 
-            <p>
-                We introduce a unified framework for fall mitigation and stand-up recovery with perceptual awareness using egocentric vision. Our method employs
-                a privileged teacher that learns recovery strategies conditioned
-                on sparse demonstration priors and local terrain geometry, and
-                a deployable student that infers the teacher’s goal representation
-                from egocentric depth and short-term proprioception via distillation. This enables the student to reason about both how to fall
-                and how to get up while avoiding unsafe contacts. Simulation experiments demonstrate higher success and safer recovery across
-                diverse non-flat terrains and disturbance conditions compared to blind baselines. The learned policy transfers zero-shot to a
-                real Unitree G1 humanoid, recovering from diverse stand-up scenarios and falls in unstructured environments without any
-                real-world fine-tuning
-            </p>
+<!-- Standing up -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Standing Up on Flat Ground</h2>
+                <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">Face down</h2>
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stand_up/face_down_on_ground.mp4"
+                    type="video/mp4">
+          </video>
         </div>
+      </div>
+
+      <div class="column">
+        <h2 class="title is-4">Face up</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/stand_up/face_up_on_ground.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
       </div>
     </div>
     <!--/ Abstract. -->
